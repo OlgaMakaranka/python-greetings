@@ -1,0 +1,16 @@
+services:
+  greetings-app-dev:
+    container_name: greetings-app-dev
+    image: olgamakaranka/python-greetings-app:latest
+    ports:
+      - 7001:3000
+  greetings-app-stg:
+    container_name: greetings-app-stg
+    image: olgamakaranka/python-greetings-app:latest
+    ports:
+      - 7002:3000
+  greetings-app-prod:
+    container_name: greetings-app-prod
+    image: olgamakaranka/python-greetings-app:latest
+    ports:
+      - 7003:3000
