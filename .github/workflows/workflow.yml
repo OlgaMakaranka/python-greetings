@@ -52,19 +52,19 @@ jobs:
       - uses: ./.github/actions/test
         with:
           environment: 'stg'
-  deploy-prd:
+  deploy-prod:
     runs-on: self-hosted
     needs: [api-integration-tests-stg]
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/deploy
         with:
-          environment: 'prd'
-  api-integration-tests-prd:
+          environment: 'prod'
+  api-integration-tests-prod:
     runs-on: self-hosted
-    needs: [deploy-prd]
+    needs: [deploy-prod]
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/test
         with:
-          environment: 'prd'
+          environment: 'prod'
